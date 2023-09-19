@@ -1,38 +1,196 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* color */
+  --color-background: hsl(234, 29%, 20%);
+  --color-white: #fff;
+  --text-color: hsl(235, 18%, 26%);
+  --hover-color: hsl(4, 100%, 67%);
+  --input-error-bg: hsla(4, 85%, 79%, 0.644);
+  --color-gray: hsl(231, 7%, 60%);
+
+  /* font size */
+  --small-font: 11px;
+  --big-font: 2.5rem;
+  --mid-font: 2rem;
+
+  /* font weight  */
+  --font-bold: 700;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem;
+  font-size: 14px;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+/* mobile container */
+.container {
+  background-color: var(--color-white);
+  color: var(--text-color);
+  border-radius: 20px;
+}
+.container-main {
+  width: 375px;
+}
+.desktop-img {
+  display: none;
+}
+
+/* list */
+.list {
+  list-style: none;
+  padding: .5rem 1rem;
+  display: flex;
+  align-content: center;
+}
+.list img {
+  margin-right: 1rem;
+}
+
+/* footer */
+.attribution{
+  font-size: var(--small-font);
   text-align: center;
+  margin-top: 2rem;
+  bottom: 0;
+  color: var(--color-white);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.attribution a{
+  color: hsl(228, 45%, 44%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* text */
+.main-heading {
+  padding: 2rem 1rem 1rem;
+  font-size: var(--mid-font);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main-text {
+  padding: 1rem;
+}
+
+
+/* form  */
+.form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 2rem 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.form input {
+  margin-top: .8rem;
+  padding: .8rem 1rem;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form label {
+  font-size: var(--small-font);
+  font-weight: var(--font-bold);
+}
+
+.subscribe-btn {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-background);
+  color: var(--color-white);
+  font-weight: var(--font-bold);
+  margin-bottom: 3rem;
+  margin-top: .8rem;
+  padding: .8rem 1rem;
+  border-radius: 5px;
+}
+.email-input {
+  color: var(--text-color);
+  border: 1.5px solid var(--color-gray);
+}
+
+.subscribe-btn:hover, .dismiss-btn:hover {
+  color: var(--color-white);
+  background-color: var(--hover-color);
+  border: 2px solid var(--hover-color);
+}
+
+.dismiss-btn {
+  background-color: var(--color-background);
+  border: 2px solid var(--color-background);
+  color: var(--color-white);
+  font-weight: var(--font-bold);
+  margin: 1rem 0;
+  padding: .8rem 1rem;
+  border-radius: 5px;
+  width: 95%;
+}
+
+/* Only show invalid ring while not focused */
+.email-input:not(:focus):not(:placeholder-shown):invalid {
+  border: 1.5px solid var(--hover-color);
+  color: var(--hover-color);
+  background-color: var(--input-error-bg);
+}
+
+/* Only show valid ring while not focused and if a value is entered */
+/* :empty won't work here as that targets elements that have no childeren. Therefore we abuse :placeholder-shown */
+input:not(:focus):not(:placeholder-shown):valid {
+  color: var(--hover-color);
+  background-color: var(--input-error-bg);
+}
+
+.error-message {
+  color: var(--hover-color);
+  font-size: 11px;
+  font-weight: bold;
+}
+.msg-label {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+/* success page  */
+.success-msg {
+  padding: 2rem;
+  width: 375px;
+}
+.email-msg {
+  font-weight: var(--font-bold);
+}
+
+.success-msg h1 {
+  font-size: var(--big-font);
+  padding: 1rem 0;
+}
+
+
+
+@media screen and (min-width: 700px){
+  .desktop-img {
+    display: block;
+    width: 300px;
   }
-  to {
-    transform: rotate(360deg);
+  .mobile-img {
+    display: none;
+  }
+  .container-main {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    flex-direction: row-reverse;
+  }
+  .main-body {
+    margin: 0 2rem
+  }
+  h1 {
+    font-size: var(--big-font);
+  }
+  .subscribe-btn {
+    margin-bottom: 0;
   }
 }
