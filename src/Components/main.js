@@ -11,7 +11,7 @@ class Main extends Component {
     const { subscribed } = this.props;
     if (!subscribed) {
     return (
-      <div className='container'>
+      <div className='container' role='main'>
             <div className='container-main'>
             <img src={illustrationMobile} alt='hero-img' className='mobile-img' />
             <img src={illustrationDesktop} alt='hero-img' className='desktop-img' />

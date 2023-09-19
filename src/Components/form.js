@@ -39,7 +39,7 @@ class Form extends React.Component {
         }
         return(
             <>
-                <form onSubmit={this.handleSubmit} className="form">
+                <form onSubmit={this.handleSubmit} className="form" role="form">
                     
                     <div className="msg-label">
                     <label htmlFor="email">Email address</label>
