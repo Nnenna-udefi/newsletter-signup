@@ -106,7 +106,7 @@ body {
   color: var(--color-white);
   font-weight: var(--font-bold);
   margin-bottom: 3rem;
-  margin-top: .8rem;
+  margin-top: 1.2rem;
   padding: .8rem 1rem;
   border-radius: 5px;
 }
@@ -175,7 +175,7 @@ input:not(:focus):not(:placeholder-shown):valid {
 @media screen and (min-width: 700px){
   body {
     font-size: 16px;
-    margin: 10rem auto;
+    margin: 12rem auto;
   }
   .desktop-img {
     display: block;
@@ -185,7 +185,7 @@ input:not(:focus):not(:placeholder-shown):valid {
     display: none;
   }
   .container-main {
-    width: 100%;
+    width: 800px;
     display: flex;
     padding: 1rem;
     flex-direction: row-reverse;
